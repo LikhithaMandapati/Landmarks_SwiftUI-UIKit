@@ -1,15 +1,17 @@
 # Landmarks
 
-**Landmarks** is an iOS app built using SwiftUI. The app showcases a list of notable landmarks, allowing users to browse details, mark favorites, and view their locations on an interactive map. It demonstrates various features of SwiftUI, including declarative UI building, data flow with state management, integration with UIKit components, and integration with MapKit for map-based views.
+**Landmarks** is an iOS app built using SwiftUI.
+The app showcases a list of notable landmarks, allowing users to browse details, mark favorites, and view their locations on an interactive map. It demonstrates various features of SwiftUI, including declarative UI building, state management, integration with UIKit components, and integration with MapKit for map-based views. Additionally, the project includes an Apple Watch companion app, providing users with a glanceable and streamlined experience directly from their wrists.
 
 ## Features
 
 - **Landmark List**: Displays a scrollable list of landmarks, each with a thumbnail image, name, and location.
 - **Favorite Landmarks**: Users can mark landmarks as favorites, which are visually indicated in the list and can be filtered to show only favorites.
-- **Landmark Detail View**: Provides detailed information about each landmark, including an image, location, and descriptive text.
+- **Landmark Detail View**: Provides detailed information about each landmark, including an image, toggle to mark as favorite, descriptive text, and a map view.
 - **Map Integration**: Displays the location of landmarks on a map using `MapKit`.
 - **UIKit Integration**: Demonstrates how to integrate UIKit components with SwiftUI for more advanced functionality and compatibility.
 - **Adaptive UI**: Utilizes SwiftUI’s adaptive and responsive design to provide a great user experience across different devices and orientations.
+- **Apple Watch Integration**: A companion watchOS app to quickly view and access favorite landmarks and browse a list of landmarks directly on the Apple Watch.
 
 ## Project Structure
 
@@ -34,6 +36,14 @@ The project is organized into several key components:
 - **`landmarkData.json`**: A JSON file containing predefined data for landmarks, including name, coordinates, description, and other details.
 - **Images**: Includes images for each landmark, used within the views to provide a visual representation.
 
+### Watch App Integration
+
+- **WatchOS Companion App**: The project includes an Apple Watch app, built with SwiftUI, to provide a companion experience for the iOS app.
+  - **WatchLandmarkList**: A list view for browsing all landmarks on the Apple Watch, displaying their names and favorite status.
+  - **WatchLandmarkDetail**: A detailed view for each landmark, showing the name, description, and favorite toggle, optimized for the smaller screen size of the Apple Watch.
+  - **Complication Support**: Offers complications that can be added to the Apple Watch face, allowing users to quickly glance at their favorite landmarks.
+  - **Synchronization**: Ensures data synchronization between the iOS app and the Apple Watch app, using `App Groups` or `WatchConnectivity` framework to maintain consistency in favorite landmarks.
+
 ### UIKit Integration
 
 While the app primarily uses SwiftUI, it also demonstrates how to integrate UIKit components to enhance functionality. The following integrations are used:
@@ -43,13 +53,13 @@ While the app primarily uses SwiftUI, it also demonstrates how to integrate UIKi
 - **Combining SwiftUI and UIKit**: This project shows how to leverage the strengths of both frameworks by combining SwiftUI's declarative UI approach with UIKit's powerful and mature components. This integration allows for smooth migration paths in existing apps or the use of advanced UI features not yet available in SwiftUI.
 
 
-
 ## Usage
 
 1. **Browse Landmarks**: Launch the app to see a list of landmarks. Scroll to browse the full list.
 2. **View Details**: Tap on any landmark to see more detailed information, including an image, map location, and additional text.
 3. **Mark as Favorite**: Use the toggle in the detail view to mark a landmark as a favorite.
 4. **Filter Favorites**: Navigate to the "Favorites" tab to view only the landmarks marked as favorites.
+5. **Apple Watch App**: Open the companion watch app to quickly access your favorite landmarks or browse all landmarks directly from your wrist.
 
 ## Key SwiftUI Concepts
 
@@ -58,3 +68,4 @@ While the app primarily uses SwiftUI, it also demonstrates how to integrate UIKi
 - **UIKit Integration**: Shows how to use `UIViewRepresentable` and `UIViewControllerRepresentable` to integrate UIKit components and view controllers with SwiftUI views.
 - **Custom Views**: Demonstrates how to create reusable custom views (`CircleImage`, `MapView`) and compose them into larger views.
 - **Navigation and Tab Views**: Implements `NavigationStack` for hierarchical navigation and `TabView` for top-level navigation between different sections.
+- **Apple Watch App Development**: Shows how to build a companion watchOS app using SwiftUI, synchronize data with the iOS app, and support watch complications.
